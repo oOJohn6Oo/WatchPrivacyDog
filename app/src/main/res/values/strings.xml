@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WatchPrivacyDog</string>
+    <string name="app_desc">A tool that logs the stack trace of invocation of privacy functions</string>
+</resources>
