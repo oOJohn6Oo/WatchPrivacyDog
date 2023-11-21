@@ -3,6 +3,7 @@ package io.john6.watchprivacydog.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.WindowCompat
 import io.john6.watchprivacydog.di.AppModule
@@ -24,6 +25,7 @@ class SettingsActivity:Activity() {
     private lateinit var mBinding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("lq", "onCreate: ")
         WindowCompat.setDecorFitsSystemWindows(window, false)
         mBinding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
@@ -34,6 +36,10 @@ class SettingsActivity:Activity() {
         mBinding.switchShouldHookAttSettings.isChecked = AppModule.shouldHook
         mBinding.switchShouldHookAttSettings.setOnCheckedChangeListener { _, isChecked ->
             AppModule.shouldHook = isChecked
+        }
+        mBinding.btnClearInvocationAttSettings.setOnClickListener {
+            AppModule.stackTraceMap.clear()
+            AppModule.stackTraceAppList.clear()
         }
         mBinding.btnShowInvocationAttSettings.setOnClickListener {
             startActivity(Intent(this,StackTraceListActivity::class.java))
