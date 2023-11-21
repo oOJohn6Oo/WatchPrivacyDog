@@ -18,4 +18,5 @@
     <string name="desc_get_device_id">Returns the unique device ID, for example, the IMEI for GSM and the MEID or ESN for CDMA phones. Return null if device ID is not available.</string>
     <string name="desc_get_android_id">It\'s a 64-bit number that should remain constant for the lifetime of a device. For apps that were installed prior to updating the device to a version of Android 8.0 (API level 26) or higher, the value of ANDROID_ID changes if the app is uninstalled and then reinstalled after the OTA. To preserve values across uninstalls after an OTA to Android 8.0 or higher, developers can use Key/Value Backup.</string>
     <string name="desc_get_installed_package">Return a List of all packages that are installed for the current user.</string>
+    <string name="desc_get_query_intent_activities">Retrieve all activities that can be performed for the given intent.</string>
 </resources>

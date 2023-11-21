@@ -67,5 +67,19 @@ class PrivacyHook : IXposedHookLoadPackage {
     ) {
         val info = hookInfo.generateData2Save()
         traceList.add(info)
+        printStackTrace(info.displayName)
     }
+    private fun printStackTrace(msg: String) {
+
+        val sb = StringBuilder()
+        Thread.currentThread().stackTrace.let { trace ->
+            sb.append(msg).append(System.lineSeparator())
+            for (traceElement in trace) {
+                sb.append("\tat $traceElement").append(System.lineSeparator())
+            }
+
+            XposedBridge.log(sb.toString())
+        }
+    }
+
 }

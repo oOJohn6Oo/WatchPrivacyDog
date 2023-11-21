@@ -5,6 +5,7 @@ import android.app.ActivityManager
 import android.bluetooth.BluetoothAdapter
 import android.content.ContentProvider
 import android.content.ContentResolver
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.SensorManager
 import android.net.wifi.WifiManager
@@ -33,6 +34,14 @@ object AppModule{
     val stackTraceMap = hashMapOf<String, LinkedList<HookItemInfo>>()
 
     val stackTraceAppList = hashSetOf<String>()
+
+
+
+    val paramsClassOfQueryIntentActivities = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        PackageManager.ResolveInfoFlags::class.java
+    } else {
+        Int::class.java
+    }
 
     val allHookInfo = listOf(
         // FIXME
@@ -120,20 +129,19 @@ object AppModule{
             InetAddress::class.java,
             "getHostAddress",
         ),
-        // TODO 测试完删除
-        HookInfo(
-            "test_Activity#OnCreate()",
-            R.string.desc_get_host_address,
-            Activity::class.java,
-            "onCreate",
-            arrayOf(Bundle::class.java)
-        ),
         HookInfo(
             "PackageManager#getInstalledPackages()",
             R.string.desc_get_installed_package,
             PackageManager::class.java,
             "getInstalledPackages",
             arrayOf(Int::class.java)
+        ),
+        HookInfo(
+            "PackageManager#queryIntentActivities()",
+            R.string.desc_get_query_intent_activities,
+            PackageManager::class.java,
+            "queryIntentActivities",
+            arrayOf(Intent::class.java, paramsClassOfQueryIntentActivities)
         ),
     )
 }
