@@ -11,7 +11,7 @@ class ViewPagerAdapter(fragmentActivity:FragmentActivity) :     FragmentStateAda
 
     override fun createFragment(position: Int): Fragment = StackTraceListFragment().apply {
         arguments = Bundle().apply {
-            putString("packageName", AppModule.stackTraceAppList.elementAt(position))
+            putString("packageName", AppModule.stackTraceAppList.elementAtOrNull(position)?:"")
         }
     }
 }

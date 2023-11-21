@@ -3,6 +3,7 @@
     <string name="app_desc">A tool that logs the stack trace of invocation of privacy functions</string>
     <string name="should_hook">Turn on Hook</string>
     <string name="show_invocation">Show Invocation</string>
+    <string name="clear_data">Clear All Data</string>
 
     <string name="desc_get_address_network">get Mac Address of Network Adapter.</string>
     <string name="desc_get_address_bluetooth">get Mac Address of Bluetooth Adapter.</string>

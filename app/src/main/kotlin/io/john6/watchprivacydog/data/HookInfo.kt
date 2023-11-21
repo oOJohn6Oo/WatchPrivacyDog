@@ -13,6 +13,6 @@ data class HookInfo(
 ) {
     fun generateData2Save(): HookItemInfo {
         val time = System.currentTimeMillis()
-        return HookItemInfo(printName, time, Thread.currentThread().stackTrace.map { it.methodName })
+        return HookItemInfo(printName, time, Thread.currentThread().stackTrace.map { it.toString() }.drop(7))
     }
 }

@@ -1,6 +1,7 @@
 package io.john6.watchprivacydog.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,17 +12,12 @@ import io.john6.watchprivacydog.di.AppModule
 import io.john6.watchprivacydog.databinding.ActivityStackTraceListBinding
 
 
-/**
- *
- *
- * @author Liu Qiang
- * @since 2023-11-20 v
- */
 class StackTraceListActivity : FragmentActivity() {
     private val mAdapter = ViewPagerAdapter(this)
     private lateinit var mBinding: ActivityStackTraceListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("lq", "onCreate: ")
         WindowCompat.setDecorFitsSystemWindows(window, false)
         mBinding = ActivityStackTraceListBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
@@ -31,7 +27,7 @@ class StackTraceListActivity : FragmentActivity() {
     private fun initView() {
         mBinding.pagerAttList.adapter = mAdapter
         TabLayoutMediator(mBinding.tabLayoutAttList, mBinding.pagerAttList) { tab, position ->
-            tab.text = AppModule.stackTraceAppList.elementAt(position)
+            tab.text = AppModule.stackTraceAppList.elementAtOrNull(position)?:"null $position"
         }.attach()
 
         ViewCompat.setOnApplyWindowInsetsListener(mBinding.root) { _, windowInsetsCompat ->

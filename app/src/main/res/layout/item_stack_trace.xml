@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:orientation="vertical"
+    tools:targetApi="m">
 
     <TextView
         android:id="@+id/title_item_stack_trace"
@@ -11,8 +14,11 @@
         android:layout_height="wrap_content"
         android:drawablePadding="12dp"
         android:gravity="center_vertical|start"
+        android:paddingHorizontal="12dp"
         android:paddingVertical="16dp"
-        tools:drawableStart="@drawable/rotate_arrow"
+        android:textStyle="bold"
+        app:drawableTint="?attr/colorOnBackground"
+        tools:drawableStartCompat="@drawable/rotate_arrow"
         tools:text="getANDROID_ID()" />
 
     <TextView
@@ -20,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="24dp"
+        android:textSize="12sp"
         tools:text="2023-11-11 11:11:11" />
 
     <TextView
@@ -30,4 +37,10 @@
         android:layout_marginTop="4dp"
         tools:text="onCreate()\nonStart()" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="4dp"
+        android:alpha="0.3"
+        android:background="?attr/colorOnBackground" />
 </LinearLayout>
