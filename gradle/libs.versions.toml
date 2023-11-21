@@ -12,6 +12,7 @@ appcompat = "1.6.1"
 material = "1.10.0"
 xposed = "82"
 xAnnotation = "1.7.0"
+viewpager2 = "1.1.0-beta02"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -32,6 +33,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 xposed = {group = "de.robv.android.xposed", name="api", version.ref = "xposed"}
 xAnnotation = {group = "androidx.annotation", name="annotation", version.ref = "xAnnotation"}
+viewpager2 = {group = "androidx.viewpager2", name="viewpager2", version.ref = "viewpager2"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
