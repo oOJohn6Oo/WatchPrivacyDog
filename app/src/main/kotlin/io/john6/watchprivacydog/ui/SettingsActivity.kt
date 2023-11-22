@@ -4,8 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.WindowCompat
+import io.john6.watchprivacydog.R
 import io.john6.watchprivacydog.di.AppModule
 import io.john6.watchprivacydog.databinding.ActivitySettingsBinding
 
@@ -40,6 +42,7 @@ class SettingsActivity:Activity() {
         mBinding.btnClearInvocationAttSettings.setOnClickListener {
             AppModule.stackTraceMap.clear()
             AppModule.stackTraceAppList.clear()
+            Toast.makeText(this, R.string.finished, Toast.LENGTH_SHORT).show()
         }
         mBinding.btnShowInvocationAttSettings.setOnClickListener {
             startActivity(Intent(this,StackTraceListActivity::class.java))

@@ -27,7 +27,9 @@ class StackTraceListActivity : FragmentActivity() {
     private fun initView() {
         mBinding.pagerAttList.adapter = mAdapter
         TabLayoutMediator(mBinding.tabLayoutAttList, mBinding.pagerAttList) { tab, position ->
-            tab.text = AppModule.stackTraceAppList.elementAtOrNull(position)?:"null $position"
+            val packageName = AppModule.stackTraceAppList.elementAtOrNull(position)?:"null $position"
+//            tab.text = packageName
+            tab.icon = this.packageManager.getApplicationIcon(packageName)
         }.attach()
 
         ViewCompat.setOnApplyWindowInsetsListener(mBinding.root) { _, windowInsetsCompat ->

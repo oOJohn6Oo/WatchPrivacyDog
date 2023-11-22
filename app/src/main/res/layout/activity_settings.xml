@@ -20,21 +20,24 @@
             android:layout_height="wrap_content"
             android:background="@null"
             android:foreground="?android:attr/selectableItemBackground"
-            android:paddingHorizontal="12dp"
-            android:paddingVertical="16dp"
-            android:text="@string/should_hook" />
+            android:paddingHorizontal="@dimen/space_large"
+            android:paddingVertical="@dimen/space_extra_large"
+            android:text="@string/should_hook"
+            android:textSize="20sp" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_clear_invocation_att_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_large"
             android:layout_marginTop="300dp"
             android:text="@string/clear_data" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_show_invocation_att_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/space_large"
             android:text="@string/show_invocation" />
     </LinearLayout>
 </ScrollView>

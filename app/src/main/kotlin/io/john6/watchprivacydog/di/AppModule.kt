@@ -1,16 +1,13 @@
 package io.john6.watchprivacydog.di
 
-import android.app.Activity
 import android.app.ActivityManager
 import android.bluetooth.BluetoothAdapter
-import android.content.ContentProvider
 import android.content.ContentResolver
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.hardware.SensorManager
 import android.net.wifi.WifiManager
 import android.os.Build
-import android.os.Bundle
 import android.provider.Settings
 import android.telephony.TelephonyManager
 import io.john6.watchprivacydog.R
@@ -44,16 +41,15 @@ object AppModule{
     }
 
     val allHookInfo = listOf(
-        // FIXME
-//        HookInfo(
-//            "Settings.Secure.ANDROID_ID",
-//            R.string.desc_get_android_id,
-//            Settings::class.java,
-//            "getString",
-//            arrayOf(ContentResolver::class.java, String::class.java)
-//        ) {
-//            it.args[1] == Settings.Secure.ANDROID_ID
-//        },
+        HookInfo(
+            "Settings.Secure.ANDROID_ID",
+            R.string.desc_get_android_id,
+            Settings.Secure::class.java,
+            "getString",
+            arrayOf(ContentResolver::class.java, String::class.java)
+        ) {
+            it.args[1] == Settings.Secure.ANDROID_ID
+        },
         HookInfo(
             "TelephonyManager.getDeviceId()",
             R.string.desc_get_device_id,
