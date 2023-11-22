@@ -5,6 +5,9 @@
     <string name="show_invocation">Show Invocation</string>
     <string name="clear_data">Clear All Data</string>
 
+    <string name="toast_copied">Copied</string>
+    <string name="finished">Finished</string>
+
     <string name="desc_get_address_network">get Mac Address of Network Adapter.</string>
     <string name="desc_get_address_bluetooth">get Mac Address of Bluetooth Adapter.</string>
     <string name="desc_get_running_app_processes">get a list of application processes that are running on the device.</string>

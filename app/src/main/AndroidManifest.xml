@@ -44,7 +44,6 @@
         <receiver
             android:name=".WatchDogBroadcastReceiver"
             android:exported="true"
-            android:enabled="true"
             tools:ignore="ExportedReceiver">
             <intent-filter>
                 <action android:name="io.john6.watchprivacydog.receiveHook" />

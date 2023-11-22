@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:background="@null"
         android:elevation="0dp"
-        android:minHeight="?android:attr/actionBarSize" />
+        android:minHeight="?android:attr/actionBarSize"
+        app:tabIconTint="@android:color/transparent"
+        app:tabIconTintMode="src_atop" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager_att_list"
