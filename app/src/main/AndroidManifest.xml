@@ -49,6 +49,11 @@
                 <action android:name="io.john6.watchprivacydog.receiveHook" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:authorities="io.john6.watchprivacydog.androidx-startup"
+            tools:node="remove"
+            android:name="androidx.startup.InitializationProvider"/>
     </application>
 
 </manifest>

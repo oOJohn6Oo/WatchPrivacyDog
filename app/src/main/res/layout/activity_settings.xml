@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -12,9 +14,10 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="Coming soon" />
 
-        <com.google.android.material.materialswitch.MaterialSwitch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switch_should_hook_att_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -23,21 +26,29 @@
             android:paddingHorizontal="@dimen/space_large"
             android:paddingVertical="@dimen/space_extra_large"
             android:text="@string/should_hook"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            app:thumbTint="@color/colorPrimary"
+            app:trackTint="?android:attr/colorControlHighlight"
+            tools:checked="true" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btn_clear_invocation_att_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_large"
             android:layout_marginTop="300dp"
+            android:background="@drawable/button_background"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="@string/clear_data" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btn_show_invocation_att_settings"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/space_large"
+            android:layout_marginTop="@dimen/space_large"
+            android:background="@drawable/button_background"
+            android:foreground="?android:attr/selectableItemBackground"
             android:text="@string/show_invocation" />
     </LinearLayout>
 </ScrollView>

@@ -38,4 +38,5 @@ viewpager2 = {group = "androidx.viewpager2", name="viewpager2", version.ref = "v
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
 

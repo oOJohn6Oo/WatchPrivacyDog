@@ -17,7 +17,7 @@
         android:paddingHorizontal="12dp"
         android:paddingVertical="16dp"
         android:textStyle="bold"
-        app:drawableTint="?attr/colorOnBackground"
+        app:drawableTint="@color/colorOnBackground"
         tools:drawableStartCompat="@drawable/rotate_arrow"
         tools:text="getANDROID_ID()" />
 
@@ -42,5 +42,5 @@
         android:layout_height="1px"
         android:layout_marginTop="4dp"
         android:alpha="0.15"
-        android:background="?attr/colorOnBackground" />
+        android:background="@color/colorOnBackground" />
 </LinearLayout>

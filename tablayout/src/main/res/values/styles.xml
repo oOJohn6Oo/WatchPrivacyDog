@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultTabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabGravity">fill</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabIndicatorFullWidth">true</item>
+    </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="android:background">@null</item>
+        <item name="tabIconTint">@null</item>
+        <item name="tabMaxWidth">120dp</item>
+        <item name="tabIndicatorAnimationDuration">300</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabIndicatorColor">?android:attr/colorAccent</item>
+        <item name="tabIndicatorGravity">bottom</item>
+        <item name="tabIndicatorAnimationMode">linear</item>
+        <item name="tabIndicator">@drawable/default_indicator</item>
+        <item name="tabPaddingStart">12dp</item>
+        <item name="tabPaddingEnd">12dp</item>
+        <item name="tabTextColor">@null</item>
+        <item name="tabRippleColor">?attr/colorControlHighlight</item>
+        <item name="tabUnboundedRipple">false</item>
+    </style>
+
+</resources>
