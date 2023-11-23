@@ -1,15 +1,17 @@
 package io.john6.watchprivacydog.ui
 
+import android.content.pm.ApplicationInfo
 import android.os.Bundle
-import android.util.Log
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.tabs.TabLayoutMediator
-import io.john6.watchprivacydog.di.AppModule
+import io.john6.watchprivacydog.data.HookItemInfo
 import io.john6.watchprivacydog.databinding.ActivityStackTraceListBinding
+import io.john6.watchprivacydog.di.AppModule
+import java.util.LinkedList
 
 
 class StackTraceListActivity : FragmentActivity() {
@@ -17,7 +19,11 @@ class StackTraceListActivity : FragmentActivity() {
     private lateinit var mBinding: ActivityStackTraceListBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("lq", "onCreate: ")
+        // UI 界面测试使用
+        if(isDebuggable()){
+            AppModule.stackTraceAppList.add("io.john6.watchprivacydog")
+            AppModule.stackTraceMap["io.john6.watchprivacydog"] = LinkedList<HookItemInfo>()
+        }
         WindowCompat.setDecorFitsSystemWindows(window, false)
         mBinding = ActivityStackTraceListBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
@@ -39,5 +45,9 @@ class StackTraceListActivity : FragmentActivity() {
             windowInsetsCompat
         }
 
+    }
+
+    private fun isDebuggable(): Boolean {
+        return applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
     }
 }

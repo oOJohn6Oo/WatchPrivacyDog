@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "WatchPrivacyDog"
 include(":app")
+include(":tablayout")

@@ -1,27 +1,21 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "io.john6.watchprivacydog"
+    namespace = "com.google.android.material.tabs"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "io.john6.watchprivacydog"
         minSdk = 21
-        targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
-        setProperty("archivesBaseName", "WatchPrivacyDog-$versionName")
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
         release {
-            isShrinkResources = true
-            isMinifyEnabled = true
+            isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -35,19 +29,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    buildFeatures {
-        viewBinding = true
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
-    implementation(project(":tablayout"))
     implementation(libs.appcompat)
     implementation(libs.viewpager2)
-    compileOnly(libs.xposed)
 }

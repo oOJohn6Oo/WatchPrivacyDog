@@ -27,7 +27,6 @@ class SettingsActivity:Activity() {
     private lateinit var mBinding: ActivitySettingsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("lq", "onCreate: ")
         WindowCompat.setDecorFitsSystemWindows(window, false)
         mBinding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
@@ -39,6 +38,11 @@ class SettingsActivity:Activity() {
         mBinding.switchShouldHookAttSettings.setOnCheckedChangeListener { _, isChecked ->
             AppModule.shouldHook = isChecked
         }
+
+        // 确保水波纹有圆角
+        mBinding.btnClearInvocationAttSettings.clipToOutline = true
+        mBinding.btnShowInvocationAttSettings.clipToOutline = true
+
         mBinding.btnClearInvocationAttSettings.setOnClickListener {
             AppModule.stackTraceMap.clear()
             AppModule.stackTraceAppList.clear()
