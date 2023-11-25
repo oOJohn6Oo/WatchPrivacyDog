@@ -1,6 +1,6 @@
 # 通过 Xposed 实现 APP 敏感方法调用检测的工具
 
-
+[README 中文]
 
 ## 安装使用
 
@@ -27,3 +27,4 @@
 
 [太极]: https://taichi.cool
 [伏羲]: https://github.com/Katana-Official/SPatch-Update
+[README 中文]: https://github.com/oOJohn6Oo/WatchPrivacyDog/edit/main/README_ZH_hans.md
