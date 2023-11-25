@@ -23,7 +23,6 @@
 
 - [ ] 单 APP /多 APP 信息分享导出
 - [ ] 悬浮窗查看当前 APP 调用堆栈
-- [ ] Material You Dynamic Color 支持
 
 [太极]: https://taichi.cool
 [伏羲]: https://github.com/Katana-Official/SPatch-Update
